@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas - BuildWithAngga</title>
+    <style>
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden; /* Untuk memastikan radius berfungsi dengan benar */
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 5px; /* Add border-radius pada progress bar */
+        }
+
+        .colored-section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .bg-red {
+            background-color: red;
+        }
+        .bg-blue {
+            background-color: blue;
+        }
+        .text-white {
+            color: white;
+        }
+        .text-yellow {
+            color: yellow;
+        }
+
+        .formatted-section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .custom-font {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            color: #333;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .italic-text {
+            font-style: italic;
+        }
+        .underline-text {
+            text-decoration: underline;
+        }
+        .highlight-text {
+            background-color: yellow;
+        }
+        .small-text {
+            font-size: smaller;
+        }
+        .strikethrough-text {
+            text-decoration: line-through;
+        }
+        .subscript-text {
+            vertical-align: sub;
+            font-size: smaller;
+        }
+        .superscript-text {
+            vertical-align: super;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <p>BuildWithAngga</p>
+        <ul>
+            <li><a target="_blank" href="home.html">Home</a></li>
+            <li><a target="_blank" href="kelas.html">Kelas</a></li>
+            <li><a href="#">Alur Belajar</a></li>
+            <li><a href="">Challenge</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div>
+            <h1>Build Your Future Career</h1>
+            <p>Explore kelas gratis dan berbayar bersama mentor expert.</p>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Start Popular Career</th>
+                    <th>Mastering Hot Tools</th>
+                    <th>Learn Languange</th>
+                </tr>
+                <tr>
+                    <td>UI/UX Designer</td>
+                    <td>Figma</td>
+                    <td>
+                        <ul>
+                            <li>PHP</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Web Developer</td>
+                    <td>Flutter</td>
+                    <td>
+                        <ul>
+                            <li>Dart</li>
+                            <li>HTML & CSS</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Form Input Types Section -->
+    <div>
+        <h2>Member Registration Form</h2>
+        <form action="submit_form.html" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+            
+            <!-- Submit Button -->
+            <input type="submit" value="Submit">
+
+            <!-- Additional Buttons -->
+            <input type="reset" value="Reset">
+            <button type="button" onclick="alert('This is a normal button!')">Click Me</button>
+        </form>
+    </div>
+    <!-- End of Form Input Types Section -->
+
+    <!-- Progress Bar Section -->
+    <div>
+        <h2>Your Learning Progress!</h2>
+        <div clas="progress-container">
+            <div class="progress-bar" id="myProgressBar">0%</div>
+        </div>
+        <button onclick="move()">Start Progress</button>
+    </div>
+    <!-- End of Progress Bar Section -->
+    
+    <!-- Color Section -->
+    <div>
+        <h2>Colors</h2>
+        <div class="colored-section bg-red text-white">
+            <p>This is a red background with white text.</p>
+        </div>
+        <div class="colored-section bg-blue text-yellow">
+            <p>This is a blue background with yellow text.</p>
+        </div>
+    </div>
+    <!-- End of Color Section -->
+
+    <!-- Text Formatting Section -->
+    <div>
+        <h2>Text Formatting</h2>
+        <div class="formatted-section">
+            <p class="custom-font">This is a custom font with size 18px and color #333.</p>
+            <p class="bold-text">This is bold text.</p>
+            <p class="italic-text">This is italic text.</p>
+            <p class="underline-text">This is underlined text.</p>
+            <p class="highlight-text">This is highlighted text.</p>
+            <p class="small-text">This is smaller text.</p>
+            <p class="strikethrough-text">This is strikethrough text.</p>
+            <p>This is <sub class="subscript-text">subscipt</sub> text.</p>
+            <p>This is <sub class="superscript-text">superscript</sub> text.</p>
+        </div>
+    </div>
+    <!-- End of Text Formatting Section -->
+
+    <footer>
+        <p>© 2019-2024 BuildWithAngga</p>
+    </footer>
+
+    <script>
+        function move() {
+            var elem = document.getElementById("myProgressBar");
+            var width = 0;
+            var id = setInterval(frame, 50);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                    elem.innerHTML = width * 1 + '%';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
